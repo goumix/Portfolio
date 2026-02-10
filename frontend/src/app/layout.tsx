@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nathan's Weird Portfolio Labyrinth",
+  title: "Natheo's Weird Portfolio Labyrinth",
   description: "An intentionally non-professional, gamified portfolio with NFT easter eggs",
 };
 

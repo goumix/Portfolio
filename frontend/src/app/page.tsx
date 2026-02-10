@@ -15,7 +15,7 @@ const HomePage = () => (
         Welcome to the Labyrinth
       </h1>
       <p className="text-2xl text-gray-300 mb-8">
-        Nathan&apos;s Intentionally Weird Portfolio
+        Natheo&apos;s Intentionally Weird Portfolio
       </p>
     </motion.div>
 
@@ -242,7 +242,7 @@ const PersonalPage = () => (
     >
       <div className="text-center mb-6">
         <div className="text-6xl mb-4">🚀</div>
-        <h2 className="text-3xl font-bold text-pink-300">Nathan Obrault</h2>
+        <h2 className="text-3xl font-bold text-pink-300">Natheo Brault</h2>
         <p className="text-lg text-gray-300">Senior Full-Stack Web3 Developer</p>
       </div>
 
