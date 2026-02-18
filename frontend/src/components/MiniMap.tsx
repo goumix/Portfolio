@@ -77,7 +77,7 @@ export const MiniMap = () => {
   // Mini version (top-right corner)
   const MiniVersion = () => (
     <motion.div
-      className="fixed top-8 right-24 z-20 bg-black/80 border border-white/20 rounded-lg p-2 cursor-pointer hover:bg-black/90 transition-colors"
+      className="fixed top-8 right-8 z-20 bg-black/80 border border-white/20 rounded-lg p-2 cursor-pointer hover:bg-black/90 transition-colors"
       onClick={toggleMinimap}
       whileHover={{ scale: 1.05 }}
       initial={{ opacity: 0, x: 20 }}
