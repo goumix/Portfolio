@@ -8,6 +8,7 @@ import { ProjectsPage } from '@/components/pages/ProjectsPage'
 import { PersonalPage } from '@/components/pages/PersonalPage'
 import { NotFoundPage } from '@/components/pages/NotFoundPage'
 import { SubPage } from '@/components/pages/SubPage'
+import { PersonalMusicPage } from '@/components/pages/PersonalMusicPage'
 
 export default function Page() {
   const { currentPage } = useLabyrinthStore()
@@ -24,14 +25,12 @@ export default function Page() {
         return <ProjectsPage />
       case 'personal':
         return <PersonalPage />
-      case 'formation-advanced':
-        return <SubPage title="🚀 Advanced Skills" description="Deep technical expertise and specialized knowledge" />
-      case 'ai-chat':
-        return <SubPage title="💬 AI Assistant" description="Chat with my AI-powered assistant" />
-      case 'projects-web3':
-        return <SubPage title="⛓️ Web3 Projects" description="Blockchain and decentralized applications" />
       case 'personal-music':
-        return <SubPage title="🎵 My Music" description="Original compositions and soundtracks" />
+        return <PersonalMusicPage />
+      case 'personal-games':
+        return <SubPage title="🎮 Games" description="My games" />
+      case 'personal-literature':
+        return <SubPage title="📚 Literature" description="My literature" />
       case '404':
         return <NotFoundPage />
       default:

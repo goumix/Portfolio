@@ -4,13 +4,12 @@ import { persist } from 'zustand/middleware'
 export type LabyrinthPage =
   | 'home'
   | 'formation'
-  | 'ai'
   | 'projects'
   | 'personal'
-  | 'formation-advanced'
-  | 'ai-chat'
-  | 'projects-web3'
   | 'personal-music'
+  | 'personal-games'
+  | 'personal-literature'
+  | 'ai'
   | '404'
 
 export type Direction = 'up' | 'down' | 'left' | 'right'
@@ -71,32 +70,28 @@ const NAVIGATION_MAP: NavigationMap = {
   },
   formation: {
     down: 'home',
-    right: 'formation-advanced'
   },
   ai: {
     up: 'home',
-    left: 'ai-chat'
   },
   projects: {
     right: 'home',
-    up: 'projects-web3'
   },
   personal: {
+    up: 'personal-music',
+    down: 'personal-literature',
+    right: 'personal-games',
     left: 'home',
-    down: 'personal-music'
-  },
-  'formation-advanced': {
-    left: 'formation'
-  },
-  'ai-chat': {
-    right: 'ai'
-  },
-  'projects-web3': {
-    down: 'projects'
   },
   'personal-music': {
+    down: 'personal'
+  },
+  'personal-literature': {
     up: 'personal'
-  }
+  },
+  'personal-games': {
+    left: 'personal'
+  },
 }
 
 // Define page positions for minimap (grid coordinates)
@@ -106,63 +101,56 @@ const PAGES_INFO: Record<LabyrinthPage, PageInfo> = {
     title: '🏠 Home',
     description: 'The center of the labyrinth',
     discovered: true,
-    position: { x: 2, y: 2 }
+    position: { x: 4, y: 4 }
   },
   formation: {
     id: 'formation',
     title: '🎓 Formation',
     description: 'Education & Skills',
     discovered: false,
-    position: { x: 2, y: 1 }
+    position: { x: 4, y: 3 }
   },
   ai: {
     id: 'ai',
     title: '🤖 AI',
     description: 'Artificial Intelligence',
     discovered: false,
-    position: { x: 2, y: 3 }
+    position: { x: 4, y: 5 }
   },
   projects: {
     id: 'projects',
     title: '💻 Projects',
     description: 'My Work',
     discovered: false,
-    position: { x: 1, y: 2 }
+    position: { x: 3, y: 4 }
   },
   personal: {
     id: 'personal',
     title: '🎯 Personal',
     description: 'About Me',
     discovered: false,
-    position: { x: 3, y: 2 }
-  },
-  'formation-advanced': {
-    id: 'formation-advanced',
-    title: '🚀 Advanced Skills',
-    description: 'Deep expertise',
-    discovered: false,
-    position: { x: 3, y: 1 }
-  },
-  'ai-chat': {
-    id: 'ai-chat',
-    title: '💬 AI Chat',
-    description: 'Talk to me!',
-    discovered: false,
-    position: { x: 1, y: 3 }
-  },
-  'projects-web3': {
-    id: 'projects-web3',
-    title: '⛓️ Web3 Projects',
-    description: 'Blockchain work',
-    discovered: false,
-    position: { x: 1, y: 1 }
+    position: { x: 5, y: 4 }
   },
   'personal-music': {
     id: 'personal-music',
     title: '🎵 Music',
     description: 'My soundtrack',
     discovered: false,
-    position: { x: 3, y: 3 }
+    position: { x: 5, y: 3 }
+  },
+  'personal-games': {
+    id: 'personal-games',
+    title: '🎮 Games',
+    description: 'My games',
+    discovered: false,
+    position: { x: 6, y: 4 }
+  },
+  'personal-literature': {
+    id: 'personal-literature',
+    title: '📚 Literature',
+    description: 'My literature',
+    discovered: false,
+    position: { x: 5, y: 5 }
   },
   '404': {
     id: '404',
