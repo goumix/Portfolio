@@ -178,7 +178,7 @@ export const LayoutLabyrinth = ({ children }: LayoutLabyrinthProps) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+    <div className="min-h-screen min-w-screen bg-black relative overflow-hidden">
       {/* Minimap */}
       <MiniMap />
 
@@ -212,14 +212,14 @@ export const LayoutLabyrinth = ({ children }: LayoutLabyrinthProps) => {
       >
         <div>🏠 Use arrow keys to navigate</div>
         <div>🗺️ Press <kbd className="bg-white/20 px-1 rounded">M</kbd> for map</div>
-        <div>🥚 Explore to find easter eggs</div>
+        {/* <div>🥚 Explore to find easter eggs</div> */}
       </motion.div>
 
       {/* Main content area */}
       <AnimatePresence mode="wait">
         <motion.main
           key={currentPage}
-          className="min-h-screen flex items-center justify-center p-8"
+          className="min-h-screen min-w-screen flex items-center justify-center"
           initial="initial"
           animate="in"
           exit="out"

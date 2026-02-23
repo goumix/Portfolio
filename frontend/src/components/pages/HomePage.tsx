@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 export const HomePage = () => (
-  <div className="text-center text-white space-y-8 max-w-4xl">
+  <div className="text-center text-white space-y-8 h-screen w-full flex items-center justify-center">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ export const HomePage = () => (
       </p>
     </motion.div>
 
-    <motion.div
+    {/* <motion.div
       className="grid grid-cols-2 gap-8 mt-12"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -41,8 +41,8 @@ export const HomePage = () => (
           <li>🔍 Find hidden paths</li>
         </ul>
       </div>
-    </motion.div>
-
+    </motion.div> */}
+{/*
     <motion.div
       className="mt-12 p-6 bg-black/40 rounded-lg border border-white/20"
       initial={{ opacity: 0, scale: 0.9 }}
@@ -54,7 +54,6 @@ export const HomePage = () => (
         <br />
         Collect them all to unlock the ultimate prize! 🏆
       </p>
-    </motion.div>
+    </motion.div> */}
   </div>
 )
-
