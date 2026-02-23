@@ -13,7 +13,7 @@ export const MiniMap = () => {
     navigateTo
   } = useLabyrinthStore()
 
-  const gridSize = 4 // 4x4 grid for fullscreen map
+  const gridSize = 8 // 8x8 grid for fullscreen map
 
   const renderPageCell = (pageId: LabyrinthPage | null, key: string, variant: 'mini' | 'full') => {
     const pageInfo = pageId ? pages[pageId] : undefined
@@ -179,7 +179,7 @@ export const MiniMap = () => {
         </motion.h2>
 
         <motion.div
-        className="grid grid-cols-4 gap-3 w-96 h-96 mx-auto mb-8"
+        className="grid grid-cols-8 gap-3 w-full h-full mx-auto mb-8"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3 }}
