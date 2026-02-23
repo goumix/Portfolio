@@ -5,12 +5,15 @@ export const HomePage = () => (
     <div className="homeRoot">
       <HomeScene enableParallax />
       <div className="homeContent">
-        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Welcome to the Labyrinth
+        <div className="flex flex-col items-start justify-center min-w-7xl">
+
+        <h1 className="text-8xl font-bold mb-4 bg-clip-text text-white font-press-start-2p">
+          PORTFOLIO
         </h1>
-        <p className="text-2xl text-gray-300 mb-8">
-          Natheo&apos;s Intentionally Weird Portfolio
-        </p>
+          <p className="text-4xl text-gray-300 mb-8">
+            Natheo&apos;s intentionally weird portfolio
+          </p>
+        </div>
       </div>
     </div>
 
