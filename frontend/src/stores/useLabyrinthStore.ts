@@ -30,13 +30,13 @@ export type NavigationMap = {
   [key in LabyrinthPage]?: Partial<Record<Direction, LabyrinthPage>>
 }
 
-export interface EasterEgg {
-  id: string
-  name: string
-  description: string
-  unlocked: boolean
-  tokenId?: number
-}
+// export interface EasterEgg {
+//   id: string
+//   name: string
+//   description: string
+//   unlocked: boolean
+//   tokenId?: number
+// }
 
 interface LabyrinthState {
   // Navigation state
@@ -47,7 +47,7 @@ interface LabyrinthState {
   isMinimapFullscreen: boolean
 
   // Easter eggs
-  easterEggs: EasterEgg[]
+  // easterEggs: EasterEgg[]
 
   // Pages info for minimap
   pages: Record<LabyrinthPage, PageInfo>
@@ -60,7 +60,7 @@ interface LabyrinthState {
   navigate: (direction: Direction) => void
   toggleMinimap: () => void
   discoverPage: (page: LabyrinthPage) => void
-  unlockEasterEgg: (eggId: string, tokenId?: number) => void
+  // unlockEasterEgg: (eggId: string, tokenId?: number) => void
   resetProgress: () => void
 }
 
@@ -210,38 +210,38 @@ const PAGES_INFO: Record<LabyrinthPage, PageInfo> = {
 }
 
 // Initial easter eggs
-const INITIAL_EASTER_EGGS: EasterEgg[] = [
-  {
-    id: 'ai-talker',
-    name: '🗣️ AI Whisperer',
-    description: 'Had a conversation with the AI',
-    unlocked: false
-  },
-  {
-    id: 'music-lover',
-    name: '🎧 Music Lover',
-    description: 'Listened to all songs',
-    unlocked: false
-  },
-  {
-    id: 'explorer',
-    name: '🧭 Explorer',
-    description: 'Fully explored the labyrinth',
-    unlocked: false
-  },
-  {
-    id: '404-finder',
-    name: '🔍 Bug Hunter',
-    description: 'Found the 404 page',
-    unlocked: false
-  },
-  {
-    id: 'console-hacker',
-    name: '💻 Console Hacker',
-    description: 'Found the hidden console message',
-    unlocked: false
-  }
-]
+// const INITIAL_EASTER_EGGS: EasterEgg[] = [
+//   {
+//     id: 'ai-talker',
+//     name: '🗣️ AI Whisperer',
+//     description: 'Had a conversation with the AI',
+//     unlocked: false
+//   },
+//   {
+//     id: 'music-lover',
+//     name: '🎧 Music Lover',
+//     description: 'Listened to all songs',
+//     unlocked: false
+//   },
+//   {
+//     id: 'explorer',
+//     name: '🧭 Explorer',
+//     description: 'Fully explored the labyrinth',
+//     unlocked: false
+//   },
+//   {
+//     id: '404-finder',
+//     name: '🔍 Bug Hunter',
+//     description: 'Found the 404 page',
+//     unlocked: false
+//   },
+//   {
+//     id: 'console-hacker',
+//     name: '💻 Console Hacker',
+//     description: 'Found the hidden console message',
+//     unlocked: false
+//   }
+// ]
 
 export const useLabyrinthStore = create<LabyrinthState>()(
   persist(
@@ -250,7 +250,7 @@ export const useLabyrinthStore = create<LabyrinthState>()(
       currentPage: 'home',
       visitedPages: new Set(['home']),
       isMinimapFullscreen: false,
-      easterEggs: INITIAL_EASTER_EGGS,
+      // easterEggs: INITIAL_EASTER_EGGS,
       pages: PAGES_INFO,
       navigationMap: NAVIGATION_MAP,
 
@@ -284,7 +284,7 @@ export const useLabyrinthStore = create<LabyrinthState>()(
         } else {
           // Navigate to 404 for invalid directions
           get().navigateTo('404')
-          get().unlockEasterEgg('404-finder')
+          // get().unlockEasterEgg('404-finder')
         }
       },
 
@@ -306,22 +306,22 @@ export const useLabyrinthStore = create<LabyrinthState>()(
         }))
       },
 
-      unlockEasterEgg: (eggId: string, tokenId?: number) => {
-        set((state) => ({
-          easterEggs: state.easterEggs.map(egg =>
-            egg.id === eggId
-              ? { ...egg, unlocked: true, tokenId }
-              : egg
-          )
-        }))
-      },
+      // unlockEasterEgg: (eggId: string, tokenId?: number) => {
+      //   set((state) => ({
+      //     easterEggs: state.easterEggs.map(egg =>
+      //       egg.id === eggId
+      //         ? { ...egg, unlocked: true, tokenId }
+      //         : egg
+      //     )
+      //   }))
+      // },
 
       resetProgress: () => {
         set({
           currentPage: 'home',
           visitedPages: new Set(['home']),
           isMinimapFullscreen: false,
-          easterEggs: INITIAL_EASTER_EGGS,
+          // easterEggs: INITIAL_EASTER_EGGS,
           pages: PAGES_INFO
         })
       }

@@ -89,27 +89,27 @@ const MobileAlert = () => (
 )
 
 // Console easter egg
-const useConsoleEasterEgg = () => {
-  const { unlockEasterEgg } = useLabyrinthStore()
+// const useConsoleEasterEgg = () => {
+//   const { unlockEasterEgg } = useLabyrinthStore()
 
-  useEffect(() => {
-    const styles = [
-      'background: linear-gradient(45deg, #ff6b6b, #4ecdc4)',
-      'color: white',
-      'font-size: 16px',
-      'padding: 10px 20px',
-      'border-radius: 10px',
-      'font-weight: bold'
-    ].join(';')
+//   useEffect(() => {
+//     const styles = [
+//       'background: linear-gradient(45deg, #ff6b6b, #4ecdc4)',
+//       'color: white',
+//       'font-size: 16px',
+//       'padding: 10px 20px',
+//       'border-radius: 10px',
+//       'font-weight: bold'
+//     ].join(';')
 
-    console.log('%c🎉 SECRET DISCOVERED! 🎉', styles)
-    console.log('You found the hidden console message! This unlocks a special NFT.')
-    console.log('Keep exploring the labyrinth for more easter eggs...')
+//     console.log('%c🎉 SECRET DISCOVERED! 🎉', styles)
+//     console.log('You found the hidden console message! This unlocks a special NFT.')
+//     console.log('Keep exploring the labyrinth for more easter eggs...')
 
-    // Unlock the console hacker easter egg
-    unlockEasterEgg('console-hacker')
-  }, [unlockEasterEgg])
-}
+//     // Unlock the console hacker easter egg
+//     unlockEasterEgg('console-hacker')
+//   }, [unlockEasterEgg])
+// }
 
 export const LayoutLabyrinth = ({ children }: LayoutLabyrinthProps) => {
   // Call all hooks first
@@ -121,11 +121,11 @@ export const LayoutLabyrinth = ({ children }: LayoutLabyrinthProps) => {
     isMinimapFullscreen,
     toggleMinimap,
     pages,
-    easterEggs
+    // easterEggs
   } = useLabyrinthStore()
 
   // Add console easter egg
-  useConsoleEasterEgg()
+  // useConsoleEasterEgg()
 
   // Keyboard navigation
   useEffect(() => {
@@ -231,7 +231,7 @@ export const LayoutLabyrinth = ({ children }: LayoutLabyrinthProps) => {
       </AnimatePresence>
 
       {/* Easter egg indicator */}
-      <motion.div
+      {/* <motion.div
         className="fixed bottom-8 right-8 z-20 bg-black/60 text-white px-4 py-2 rounded-lg border border-white/20"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -241,7 +241,7 @@ export const LayoutLabyrinth = ({ children }: LayoutLabyrinthProps) => {
         <div className="font-bold text-lg">
           {easterEggs.filter(egg => egg.unlocked).length} / {easterEggs.length}
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Ambient particles effect */}
       <div className="fixed inset-0 pointer-events-none z-0">
