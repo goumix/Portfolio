@@ -5,7 +5,11 @@ export type LabyrinthPage =
   | 'home'
   | 'formation'
   | 'projects'
+  | 'blockchain'
+  | 'entrepreneurship'
+  | 'personal-projects'
   | 'personal'
+  | 'health'
   | 'personal-music'
   | 'personal-games'
   | 'personal-literature'
@@ -71,26 +75,42 @@ const NAVIGATION_MAP: NavigationMap = {
   formation: {
     down: 'home',
   },
-  ai: {
-    up: 'home',
-  },
   projects: {
+    up: 'blockchain',
+    down: 'personal-projects',
     right: 'home',
+    left: 'entrepreneurship',
+  },
+  blockchain: {
+    down: 'projects',
+  },
+  entrepreneurship: {
+    right: 'projects',
+  },
+  'personal-projects': {
+    up: 'projects',
   },
   personal: {
     up: 'personal-music',
-    down: 'personal-literature',
+    down: 'health',
     right: 'personal-games',
     left: 'home',
+  },
+  health: {
+    up: 'personal',
   },
   'personal-music': {
     down: 'personal'
   },
   'personal-literature': {
-    up: 'personal'
+    left: 'personal-games',
   },
   'personal-games': {
-    left: 'personal'
+    left: 'personal',
+    right: 'personal-literature',
+  },
+  ai: {
+    up: 'home',
   },
 }
 
@@ -110,13 +130,6 @@ const PAGES_INFO: Record<LabyrinthPage, PageInfo> = {
     discovered: false,
     position: { x: 4, y: 3 }
   },
-  ai: {
-    id: 'ai',
-    title: '🤖 AI',
-    description: 'Artificial Intelligence',
-    discovered: false,
-    position: { x: 4, y: 5 }
-  },
   projects: {
     id: 'projects',
     title: '💻 Projects',
@@ -124,12 +137,40 @@ const PAGES_INFO: Record<LabyrinthPage, PageInfo> = {
     discovered: false,
     position: { x: 3, y: 4 }
   },
+  blockchain: {
+    id: 'blockchain',
+    title: '💰 Blockchain',
+    description: 'My blockchain',
+    discovered: false,
+    position: { x: 3, y: 3 }
+  },
+  entrepreneurship: {
+    id: 'entrepreneurship',
+    title: '💼 Entrepreneurship',
+    description: 'My entrepreneurship',
+    discovered: false,
+    position: { x: 2, y: 4 }
+  },
+  'personal-projects': {
+    id: 'personal-projects',
+    title: '💻 Personal Projects',
+    description: 'My personal projects',
+    discovered: false,
+    position: { x: 3, y: 5 }
+  },
   personal: {
     id: 'personal',
     title: '🎯 Personal',
     description: 'About Me',
     discovered: false,
     position: { x: 5, y: 4 }
+  },
+  health: {
+    id: 'health',
+    title: '🧘 Health',
+    description: 'My health',
+    discovered: false,
+    position: { x: 5, y: 5 }
   },
   'personal-music': {
     id: 'personal-music',
@@ -150,7 +191,14 @@ const PAGES_INFO: Record<LabyrinthPage, PageInfo> = {
     title: '📚 Literature',
     description: 'My literature',
     discovered: false,
-    position: { x: 5, y: 5 }
+    position: { x: 7, y: 4 }
+  },
+  ai: {
+    id: 'ai',
+    title: '🤖 AI',
+    description: 'Artificial Intelligence',
+    discovered: false,
+    position: { x: 4, y: 5 }
   },
   '404': {
     id: '404',

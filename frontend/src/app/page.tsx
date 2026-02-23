@@ -19,18 +19,26 @@ export default function Page() {
         return <HomePage />
       case 'formation':
         return <FormationPage />
-      case 'ai':
-        return <AIPage />
       case 'projects':
         return <ProjectsPage />
+      case 'blockchain':
+        return <SubPage title="💰 Blockchain" description="My blockchain" />
+      case 'entrepreneurship':
+        return <SubPage title="💼 Entrepreneurship" description="My entrepreneurship" />
+      case 'personal-projects':
+        return <SubPage title="💻 Personal Projects" description="My personal projects" />
       case 'personal':
         return <PersonalPage />
+      case 'health':
+        return <SubPage title="🧘 Health" description="My health" />
       case 'personal-music':
         return <PersonalMusicPage />
       case 'personal-games':
         return <SubPage title="🎮 Games" description="My games" />
       case 'personal-literature':
         return <SubPage title="📚 Literature" description="My literature" />
+      case 'ai':
+        return <AIPage />
       case '404':
         return <NotFoundPage />
       default:
