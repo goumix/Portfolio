@@ -22,8 +22,11 @@ export function HomeScene({
   const layers: Layer[] = useMemo(
     () => [
       { key: "bg", src: "/home-bg/bg.webp", depth: 0.15, delay: 0.00 },
-      { key: "rocks", src: "/home-bg/rocks.webp", depth: 0.35, delay: 0.24 },
-      { key: "diamond", src: "/home-bg/diamond.webp", depth: 0.9, delay: 0.44, className: "diamond" },
+      { key: "rocks3", src: "/home-bg/rocks-3.webp", depth: 0.45, delay: 0.34 },
+      { key: "rocks2", src: "/home-bg/rocks-2.webp", depth: 0.40, delay: 0.29 },
+      { key: "rocks1", src: "/home-bg/rocks-1.webp", depth: 0.35, delay: 0.24 },
+      { key: "diamond", src: "/home-bg/diamond.webp", depth: 0.2, delay: 0.44, className: "diamond" },
+      { key: "sparkles", src: "/home-bg/sparkles.webp", depth: 0.9, delay: 0.39 },
       { key: "character", src: "/home-bg/character.webp", depth: 0.6, delay: 0.16, className: "character" },
     ],
     []
@@ -84,7 +87,7 @@ export function HomeScene({
           key={l.key}
           className="homeLayerWrap"
           initial={{ y: 140, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1.2 }}
           transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: l.delay }}
         >
           <Image
