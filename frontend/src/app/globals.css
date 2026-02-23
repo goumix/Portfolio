@@ -84,12 +84,35 @@ body {
   animation: characterBounce 2s ease-in-out infinite;
 }
 
+.rocks1 {
+  animation: rocksAnimation 4s ease-in-out infinite;
+}
+
+.rocks2 {
+  animation: rocksAnimation 6s ease-in-out infinite;
+}
+
+.rocks3 {
+  animation: rocksAnimation 8s ease-in-out infinite;
+}
+
 @keyframes characterBounce {
   0% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes rocksAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
   100% {
     transform: translateY(0);
