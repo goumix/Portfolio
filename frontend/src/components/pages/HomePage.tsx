@@ -1,19 +1,18 @@
-import { motion } from 'framer-motion'
+import { HomeScene } from './home/HomeScene'
 
 export const HomePage = () => (
   <div className="text-center text-white space-y-8 h-screen w-full flex items-center justify-center">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-        Welcome to the Labyrinth
-      </h1>
-      <p className="text-2xl text-gray-300 mb-8">
-        Natheo&apos;s Intentionally Weird Portfolio
-      </p>
-    </motion.div>
+    <div className="homeRoot">
+      <HomeScene enableParallax />
+      <div className="homeContent">
+        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          Welcome to the Labyrinth
+        </h1>
+        <p className="text-2xl text-gray-300 mb-8">
+          Natheo&apos;s Intentionally Weird Portfolio
+        </p>
+      </div>
+    </div>
 
     {/* <motion.div
       className="grid grid-cols-2 gap-8 mt-12"

@@ -216,19 +216,12 @@ export const LayoutLabyrinth = ({ children }: LayoutLabyrinthProps) => {
       </motion.div>
 
       {/* Main content area */}
-      <AnimatePresence mode="wait">
-        <motion.main
+      <div
           key={currentPage}
           className="min-h-screen min-w-screen flex items-center justify-center"
-          initial="initial"
-          animate="in"
-          exit="out"
-          variants={pageVariants}
-          transition={pageTransition}
         >
           {children}
-        </motion.main>
-      </AnimatePresence>
+        </div>
 
       {/* Easter egg indicator */}
       {/* <motion.div

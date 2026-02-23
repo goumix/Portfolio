@@ -25,3 +25,90 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.homeScene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: #000;
+}
+
+/* wrapper animé (entrée) */
+.homeLayerWrap {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+}
+
+/* image animée en parallax via variables */
+.homeLayer {
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+
+  /* combine parallax sans casser l’anim framer */
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+}
+
+.homeVignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    80% 70% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.55) 70%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* petit “wow” sur le diamond (optionnel) */
+.diamond {
+  animation: diamondPulse 3.4s ease-in-out infinite;
+}
+
+@keyframes diamondPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(180, 255, 120, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(180, 255, 120, 0.35));
+  }
+}
+
+.character {
+  animation: characterBounce 2s ease-in-out infinite;
+}
+
+@keyframes characterBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.homeRoot {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.homeContent {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
