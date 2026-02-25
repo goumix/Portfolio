@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import { LayoutLabyrinth } from "@/components/LayoutLabyrinth";
+import { LayoutLabyrinth } from "@/labyrinth/LayoutLabyrinth";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

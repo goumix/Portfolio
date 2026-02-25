@@ -1,14 +1,14 @@
 'use client'
 
-import { useLabyrinthStore } from '@/stores/useLabyrinthStore'
-import { HomePage } from '@/components/pages/HomePage'
-import { FormationPage } from '@/components/pages/FormationPage'
-import { AIPage } from '@/components/pages/AIPage'
-import { ProjectsPage } from '@/components/pages/ProjectsPage'
-import { PersonalPage } from '@/components/pages/PersonalPage'
-import { NotFoundPage } from '@/components/pages/NotFoundPage'
-import { SubPage } from '@/components/pages/SubPage'
-import { PersonalMusicPage } from '@/components/pages/PersonalMusicPage'
+import { useLabyrinthStore } from '@/labyrinth/stores/useLabyrinthStore'
+import { HomePage } from '@/views/home/HomePage'
+import { FormationPage } from '@/views/pages/FormationPage'
+import { AIPage } from '@/views/pages/AIPage'
+import { ProjectsPage } from '@/views/pages/ProjectsPage'
+import { PersonalPage } from '@/views/pages/PersonalPage'
+import { NotFoundPage } from '@/views/pages/NotFoundPage'
+import { SubPage } from '@/views/pages/SubPage'
+import { PersonalMusicPage } from '@/views/pages/PersonalMusicPage'
 
 export default function Page() {
   const { currentPage } = useLabyrinthStore()

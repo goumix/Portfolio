@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useLabyrinthStore, type LabyrinthPage } from '@/stores/useLabyrinthStore'
+import { useLabyrinthStore, type LabyrinthPage } from '@/labyrinth/stores/useLabyrinthStore'
 
 export const MiniMap = () => {
   const {

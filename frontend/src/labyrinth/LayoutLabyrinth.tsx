@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useLabyrinthStore, type Direction, type LabyrinthPage } from '@/stores/useLabyrinthStore'
+import { motion } from 'framer-motion'
+import { useLabyrinthStore, type Direction } from '@/labyrinth/stores/useLabyrinthStore'
 import { MiniMap } from './MiniMap'
 
 interface LayoutLabyrinthProps {

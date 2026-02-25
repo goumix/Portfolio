@@ -1,4 +1,4 @@
-import { HomeScene } from './home/HomeScene'
+import { HomeScene } from '@/views/home/HomeScene'
 
 export const HomePage = () => (
   <div className="text-center text-white space-y-8 h-screen w-full flex items-center justify-center">
