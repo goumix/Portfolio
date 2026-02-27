@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useLabyrinthStore, type Direction } from '@/labyrinth/stores/useLabyrinthStore'
 import { MiniMap } from './MiniMap'
+import { Button } from '@/components/ui/button'
+import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowUpIcon } from 'lucide-react'
 
 interface LayoutLabyrinthProps {
   children: React.ReactNode
@@ -36,10 +38,10 @@ const DirectionArrow = ({
   onClick: () => void
 }) => {
   const arrows = {
-    up: '↑',
-    down: '↓',
-    left: '←',
-    right: '→'
+    up: <ArrowUpIcon className="w-4 h-4" />,
+    down: <ArrowDownIcon className="w-4 h-4" />,
+    left: <ArrowLeftIcon className="w-4 h-4" />,
+    right: <ArrowRightIcon className="w-4 h-4" />,
   }
 
   const positions = {
@@ -52,17 +54,9 @@ const DirectionArrow = ({
   if (!available) return null
 
   return (
-    <motion.button
-      className={`fixed ${positions[direction]} z-30 bg-black/80 text-white text-4xl p-4 rounded-full hover:bg-black/90 transition-all duration-300 hover:scale-110 font-mono border-2 border-white/20`}
-      onClick={onClick}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.5 }}
-    >
+    <Button variant="default" size="icon-lg" className={`fixed ${positions[direction]} z-30 p-4 rounded-full`} onClick={onClick}>
       {arrows[direction]}
-    </motion.button>
+    </Button>
   )
 }
 
