@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export const AIPage = () => (
+export const AIView = () => (
   <div className="text-white space-y-8 max-w-4xl">
     <motion.h1
       className="text-5xl font-bold text-center mb-8 text-green-400"
@@ -50,4 +50,3 @@ export const AIPage = () => (
     </motion.div>
   </div>
 )
-

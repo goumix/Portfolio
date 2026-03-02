@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export const ProjectsPage = () => (
+export const ProjectsView = () => (
   <div className="text-white space-y-8 max-w-4xl">
     <motion.h1
       className="text-5xl font-bold text-center mb-8 text-yellow-400"
@@ -53,4 +53,3 @@ export const ProjectsPage = () => (
     </div>
   </div>
 )
-

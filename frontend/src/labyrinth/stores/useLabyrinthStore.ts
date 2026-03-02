@@ -10,9 +10,9 @@ export type LabyrinthPage =
   | 'personal-projects'
   | 'personal'
   | 'health'
-  | 'personal-music'
-  | 'personal-games'
-  | 'personal-literature'
+  | 'music'
+  | 'games'
+  | 'literature'
   | 'ai'
   | '404'
 
@@ -91,23 +91,23 @@ const NAVIGATION_MAP: NavigationMap = {
     up: 'projects',
   },
   personal: {
-    up: 'personal-music',
+    up: 'music',
     down: 'health',
-    right: 'personal-games',
+    right: 'games',
     left: 'home',
   },
   health: {
     up: 'personal',
   },
-  'personal-music': {
+  music: {
     down: 'personal'
   },
-  'personal-literature': {
-    left: 'personal-games',
+  literature: {
+    left: 'games',
   },
-  'personal-games': {
+  games: {
     left: 'personal',
-    right: 'personal-literature',
+    right: 'literature',
   },
   ai: {
     up: 'home',
@@ -172,22 +172,22 @@ const PAGES_INFO: Record<LabyrinthPage, PageInfo> = {
     discovered: false,
     position: { x: 5, y: 5 }
   },
-  'personal-music': {
-    id: 'personal-music',
+  music: {
+    id: 'music',
     title: '🎵 Music',
     description: 'My soundtrack',
     discovered: false,
     position: { x: 5, y: 3 }
   },
-  'personal-games': {
-    id: 'personal-games',
+  games: {
+    id: 'games',
     title: '🎮 Games',
     description: 'My games',
     discovered: false,
     position: { x: 6, y: 4 }
   },
-  'personal-literature': {
-    id: 'personal-literature',
+  literature: {
+    id: 'literature',
     title: '📚 Literature',
     description: 'My literature',
     discovered: false,

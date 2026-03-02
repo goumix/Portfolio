@@ -1,14 +1,14 @@
 'use client'
 
 import { useLabyrinthStore } from '@/labyrinth/stores/useLabyrinthStore'
-import { HomePage } from '@/views/home/HomePage'
-import { FormationPage } from '@/views/pages/FormationPage'
-import { AIPage } from '@/views/pages/AIPage'
-import { ProjectsPage } from '@/views/pages/ProjectsPage'
-import { PersonalPage } from '@/views/pages/PersonalPage'
+import { HomeView } from '@/views/home/HomeView'
+import { FormationView } from '@/views/formation/FormationView'
+import { AIView } from '@/views/AI/AIView'
+import { ProjectsView } from '@/views/projects/ProjectsView'
+import { PersonalView } from '@/views/personal/PersonalView'
 import { NotFoundPage } from '@/views/pages/NotFoundPage'
 import { SubPage } from '@/views/pages/SubPage'
-import { PersonalMusicPage } from '@/views/pages/PersonalMusicPage'
+import { MusicView } from '@/views/music/MusicView'
 
 export default function Page() {
   const { currentPage } = useLabyrinthStore()
@@ -16,11 +16,11 @@ export default function Page() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage />
+        return <HomeView />
       case 'formation':
-        return <FormationPage />
+        return <FormationView />
       case 'projects':
-        return <ProjectsPage />
+        return <ProjectsView />
       case 'blockchain':
         return <SubPage title="💰 Blockchain" description="My blockchain" />
       case 'entrepreneurship':
@@ -28,21 +28,21 @@ export default function Page() {
       case 'personal-projects':
         return <SubPage title="💻 Personal Projects" description="My personal projects" />
       case 'personal':
-        return <PersonalPage />
+        return <PersonalView />
       case 'health':
         return <SubPage title="🧘 Health" description="My health" />
-      case 'personal-music':
-        return <PersonalMusicPage />
-      case 'personal-games':
+      case 'music':
+        return <MusicView />
+      case 'games':
         return <SubPage title="🎮 Games" description="My games" />
-      case 'personal-literature':
+      case 'literature':
         return <SubPage title="📚 Literature" description="My literature" />
       case 'ai':
-        return <AIPage />
+        return <AIView />
       case '404':
         return <NotFoundPage />
       default:
-        return <HomePage />
+        return <HomeView />
     }
   }
 

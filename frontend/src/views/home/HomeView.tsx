@@ -1,6 +1,6 @@
 import { HomeScene } from '@/views/home/HomeScene'
 
-export const HomePage = () => (
+export const HomeView = () => (
   <div className="text-center text-white space-y-8 h-screen w-full flex items-center justify-center">
     <div className="homeRoot">
       <HomeScene enableParallax />

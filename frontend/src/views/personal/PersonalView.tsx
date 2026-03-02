@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export const PersonalPage = () => (
+export const PersonalView = () => (
   <div className="text-white space-y-8 max-w-4xl">
     <motion.h1
       className="text-5xl font-bold text-center mb-8 text-pink-400"
